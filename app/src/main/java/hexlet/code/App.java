@@ -19,6 +19,7 @@ public class App {
                 break;
             case 2:
                 Even.askEvenNumber();
+                break;
             default:
                 break;
         }
