@@ -1,5 +1,8 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
+import hexlet.code.games.Even;
+
 import java.util.Scanner;
 
 public class App {
@@ -17,7 +20,7 @@ public class App {
 
         switch (userChoice) {
             case 1:
-                Cli.askUserName();
+                Engine.greetingUser();
                 break;
             case 2:
                 Even.askEvenNumber();

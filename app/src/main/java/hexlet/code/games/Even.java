@@ -1,17 +1,14 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Even {
     public static void askEvenNumber() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
+        Engine.greetingUser();
 
-        String userName = scanner.nextLine();
-
-        System.out.println("Hello, " + userName + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int count = 0;
@@ -31,7 +28,7 @@ public class Even {
                     count++;
                 } else if (userAnswer.equals("no")) {
                     System.out.println("'no' is the wrong answer ;(. The correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + userName + "!");
+                    System.out.println("Let's try again, " + Engine.userName + "!");
                     break;
                 } else {
                     System.out.println("Incorrect answer, need 'yes' or 'no'.");
@@ -43,7 +40,7 @@ public class Even {
                     count++;
                 } else if (userAnswer.equals("yes")) {
                     System.out.println("'yes' is the wrong answer ;(. The correct answer was 'no'.");
-                    System.out.println("Let's try again, " + userName + "!");
+                    System.out.println("Let's try again, " + Engine.userName + "!");
                     break;
                 } else {
                     System.out.println("Incorrect answer, need 'yes' or 'no'.");
@@ -52,7 +49,7 @@ public class Even {
             }
         }
         if (count == 3) {
-            System.out.println("Congratulations, " + userName + " !");
+            System.out.println("Congratulations, " + Engine.userName + " !");
         }
         scanner.close();
     }
