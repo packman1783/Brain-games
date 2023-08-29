@@ -1,17 +1,14 @@
-package hexlet.code;
+package hexlet.code.games;
 
+import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calculator {
     public static void askCalculate() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
+        Engine.greetingUser();
 
-        String userName = scanner.nextLine();
-
-        System.out.println("Hello, " + userName + "!");
         System.out.println("What is the result of the expression?");
 
         int count = 0;
@@ -48,12 +45,12 @@ public class Calculator {
                 count++;
             } else {
                 System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + result + ".");
-                System.out.println("Let's try again, " + userName + "!");
+                System.out.println("Let's try again, " + Engine.userName + "!");
                 break;
             }
         }
         if (count == 3) {
-            System.out.println("Congratulations, " + userName + " !");
+            System.out.println("Congratulations, " + Engine.userName + " !");
         }
         scanner.close();
     }
