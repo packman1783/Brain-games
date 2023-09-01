@@ -4,7 +4,6 @@ import hexlet.code.Engine;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 public class Progression {
     public static void askProgression() {
         Scanner scanner = new Scanner(System.in);
