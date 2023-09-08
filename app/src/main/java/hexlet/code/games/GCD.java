@@ -1,51 +1,33 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
-import hexlet.code.Engine;
+import hexlet.code.Random;
 
 public class GCD {
-    public static void askGCD() {
-        Scanner scanner = new Scanner(System.in);
+    static final int MIN_VALUE = 1;
+    static final int MAX_VALUE = 100;
 
-        Engine.greetingUser();
-
+    public static void gameRule() {
         System.out.println("Find the greatest common divisor of given numbers.");
-
-        int count = 0;
-
-        for (int i = 0; i < 3; i++) {
-            int randomNum1 = (int) (Math.random() * 100) + 1;
-            int randomNum2 = (int) (Math.random() * 100) + 1;
-
-            System.out.println("Question :" + randomNum1 + " " + randomNum2);
-
-            int userAnswer = scanner.nextInt();
-
-            System.out.println("Your answer: " + userAnswer);
-
-            while (randomNum1 != randomNum2) {
-                if (randomNum1 > randomNum2) {
-                    randomNum1 = randomNum1 - randomNum2;
-                }
-                if (randomNum2 > randomNum1) {
-                    randomNum2 = randomNum2 - randomNum1;
-                }
-            }
-            int result = randomNum1;
-
-            if (userAnswer == result) {
-                System.out.println("Correct!");
-                count++;
-            } else {
-                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + result + ".");
-                System.out.println("Let's try again, " + Engine.userName + "!");
-                break;
-            }
-        }
-        if (count == 3) {
-            System.out.println("Congratulations, " + Engine.userName + "!");
-        }
-        scanner.close();
     }
 
+    public static String gameCorrectAnswer() {
+        int randomNumber1 = Random.getRandom(MIN_VALUE, MAX_VALUE);
+        int randomNumber2 = Random.getRandom(MIN_VALUE, MAX_VALUE);
+
+        int result = 0;
+
+        System.out.println("Question :" + randomNumber1 + " " + randomNumber2);
+
+        while (randomNumber1 != randomNumber2) {
+            if (randomNumber1 > randomNumber2) {
+                randomNumber1 = randomNumber1 - randomNumber2;
+            }
+            if (randomNumber2 > randomNumber1) {
+                randomNumber2 = randomNumber2 - randomNumber1;
+            }
+        }
+        result = randomNumber1;
+
+        return Integer.toString(result);
+    }
 }

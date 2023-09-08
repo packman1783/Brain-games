@@ -4,17 +4,11 @@
 # Ignore Gradle build output directory
 build/
 
+# Ignore logs
 **/logs/
 
-.settings
-.project*
-.factorypath
-
-### IntelliJ IDEA
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+# Ignore IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr

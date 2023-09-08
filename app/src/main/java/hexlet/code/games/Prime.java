@@ -1,61 +1,30 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
-import hexlet.code.Engine;
+import hexlet.code.Random;
 
 public class Prime {
-    public static void askPrime() {
-        Scanner scanner = new Scanner(System.in);
+    static final int MIN_VALUE = 0;
+    static final int MAX_VALUE = 100;
 
-        Engine.greetingUser();
-
+    public static void gameRule() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    }
 
-        int count = 0;
-
-        for (int i = 0; i < 3; i++) {
-            int randomNumber = (int) (Math.random() * 100) + 2;
-            boolean isRandomNumberPrime = isSimple(randomNumber);
+    public static String gameCorrectAnswer() {
+            int randomNumber = Random.getRandom(MIN_VALUE, MAX_VALUE);
 
             System.out.println("Question: " + randomNumber);
 
-            String userAnswer = scanner.nextLine();
-
-            if (isRandomNumberPrime == true) {
-                if (userAnswer.equals("yes")) {
-                    System.out.println("Correct!");
-                    count++;
-                } else if (userAnswer.equals("no")) {
-                    System.out.println("'no' is the wrong answer ;(. The correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + Engine.userName + "!");
-                    break;
-                } else {
-                    System.out.println("Incorrect answer, need 'yes' or 'no'.");
-                    break;
-                }
-            } else {
-                if (userAnswer.equals("no")) {
-                    System.out.println("Correct!");
-                    count++;
-                } else if (userAnswer.equals("yes")) {
-                    System.out.println("'yes' is the wrong answer ;(. The correct answer was 'no'.");
-                    System.out.println("Let's try again, " + Engine.userName + "!");
-                    break;
-                } else {
-                    System.out.println("Incorrect answer, need 'yes' or 'no'.");
-                    break;
-                }
-            }
-        }
-        if (count == 3) {
-            System.out.println("Congratulations, " + Engine.userName + " !");
-        }
-        scanner.close();
+            return  isPrime(randomNumber) ? "yes" : "no";
     }
 
-    public static boolean isSimple(int randomNumber) {
-        for (int j = 2; j < randomNumber / 2; j++) {
-            if(randomNumber % j == 0) {
+    public static boolean isPrime(int randomNumber) {
+        if (randomNumber < 2) {
+            return false;
+        }
+
+        for (int i = 2; i < Math.sqrt(randomNumber); i++) {
+            if (randomNumber % i == 0) {
                 return false;
             }
         }

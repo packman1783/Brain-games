@@ -1,8 +1,12 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
-
+import hexlet.code.games.Calculator;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 import java.util.Scanner;
+
 
 public class App {
     public static void main(String[] args) {
@@ -18,29 +22,41 @@ public class App {
         System.out.println("0 - Exit");
 
         int userChoice = scanner.nextInt();
+
         System.out.println("Your choice: " + userChoice);
 
         switch (userChoice) {
             case 1:
-                Engine.greetingUser();
+                Cli.greetingUser();
                 break;
             case 2:
-                Even.askEvenNumber();
+                Cli.greetingUser();
+                Even.gameRule();
+                Engine.gamePlay(userChoice);
                 break;
             case 3:
-                Calculator.askCalculate();
+                Cli.greetingUser();
+                Calculator.gameRule();
+                Engine.gamePlay(userChoice);
                 break;
             case 4:
-                GCD.askGCD();
+                Cli.greetingUser();
+                GCD.gameRule();
+                Engine.gamePlay(userChoice);
                 break;
             case 5:
-                Progression.askProgression();
+                Cli.greetingUser();
+                Progression.gameRule();
+                Engine.gamePlay(userChoice);
                 break;
             case 6:
-                Prime.askPrime();
+                Cli.greetingUser();
+                Prime.gameRule();
+                Engine.gamePlay(userChoice);
                 break;
             default:
-                break;
+                System.out.println("no such game: " + userChoice);
+            break;
         }
     }
 }

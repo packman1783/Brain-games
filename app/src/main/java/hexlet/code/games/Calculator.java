@@ -1,57 +1,49 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-import java.util.Scanner;
+import hexlet.code.Random;
 
 public class Calculator {
-    public static void askCalculate() {
-        Scanner scanner = new Scanner(System.in);
+    static final int MIN_VALUE = 1;
+    static final int MAX_VALUE = 40;
+    static final String[] OPERATORS = new String[]{" + ", " - ", " * "};
+    static final int FIRST_INDEX_OPERATORS = 0;
+    static final int LAST_INDEX_OPERATORS = 2;
+    static String expression;
 
-        Engine.greetingUser();
-
+    public static void gameRule() {
         System.out.println("What is the result of the expression?");
+    }
 
-        int count = 0;
+    public static String gameCorrectAnswer() {
+        int randomNumber1 = Random.getRandom(MIN_VALUE, MAX_VALUE);
+        int randomNumber2 = Random.getRandom(MIN_VALUE, MAX_VALUE);
 
-        for (int i = 0; i < 3; i++) {
-            int randomNum1 = (int) (Math.random() * 100);
-            int randomNum2 = (int) (Math.random() * 100);
-            int randomCalc = (int) (Math.random() * 3);
-            String expression = "";
-            int result = 0;
+        int result = randomAction(randomNumber1, randomNumber2);
+        System.out.println("Question :" + expression);
 
-            switch (randomCalc) {
-                case 0:
-                    expression = randomNum1 + " + " + randomNum2;
-                    result = randomNum1 + randomNum2;
-                    break;
-                case 1:
-                    expression = randomNum1 + " - " + randomNum2;
-                    result = randomNum1 - randomNum2;
-                    break;
-                case 2:
-                    expression = randomNum1 + " * " + randomNum2;
-                    result = randomNum1 * randomNum2;
-                    break;
-            }
-            System.out.println("Question :" + expression);
+        return Integer.toString(result);
+    }
 
-            int userAnswer = scanner.nextInt();
+    public static int randomAction(int randomNumber1, int randomNumber2) {
+        String action = OPERATORS[Random.getRandom(FIRST_INDEX_OPERATORS, LAST_INDEX_OPERATORS)];
 
-            System.out.println("Your answer: " + userAnswer);
+        int actionResult = 0;
 
-            if (userAnswer == result) {
-                System.out.println("Correct!");
-                count++;
-            } else {
-                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + result + ".");
-                System.out.println("Let's try again, " + Engine.userName + "!");
+        switch (action) {
+            case " + ":
+                actionResult = randomNumber1 + randomNumber2;
                 break;
-            }
+            case " - ":
+                actionResult = randomNumber1 - randomNumber2;
+                break;
+            case " * ":
+                actionResult = randomNumber1 * randomNumber2;
+                break;
+            default:
+                System.out.println("no such action: " + action);
+                break;
         }
-        if (count == 3) {
-            System.out.println("Congratulations, " + Engine.userName + " !");
-        }
-        scanner.close();
+        expression = randomNumber1 + action + randomNumber2;
+        return actionResult;
     }
 }
