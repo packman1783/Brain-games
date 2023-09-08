@@ -11,11 +11,11 @@ public class Prime {
     }
 
     public static String gameCorrectAnswer() {
-            int randomNumber = Random.getRandom(MIN_VALUE, MAX_VALUE);
+        int randomNumber = Random.getRandom(MIN_VALUE, MAX_VALUE);
 
-            System.out.println("Question: " + randomNumber);
+        System.out.println("Question: " + randomNumber);
 
-            return  isPrime(randomNumber) ? "yes" : "no";
+        return isPrime(randomNumber) ? "yes" : "no";
     }
 
     public static boolean isPrime(int randomNumber) {

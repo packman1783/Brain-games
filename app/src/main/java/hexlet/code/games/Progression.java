@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Random;
+
 import java.util.Arrays;
 
 public class Progression {
@@ -11,6 +12,7 @@ public class Progression {
     final static int MIN_LENGTH_PROGRESSION = 5;
     final static int MAX_LENGTH_PROGRESSION = 10;
     final static int INDEX_0_PROGRESSION = 0;
+
     public static void gameRule() {
         System.out.println("What number is missing in the progression?");
     }

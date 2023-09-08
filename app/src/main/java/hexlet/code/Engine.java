@@ -5,6 +5,7 @@ import hexlet.code.games.Calculator;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
+
 import java.util.Scanner;
 
 public class Engine {
@@ -37,7 +38,7 @@ public class Engine {
                     break;
                 default:
                     System.out.println("no such game: " + userChoice);
-                break;
+                    break;
             }
             userAnswer = scanner.nextLine();
 
