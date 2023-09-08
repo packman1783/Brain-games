@@ -14,7 +14,7 @@ public class GCD {
         int randomNumber1 = Random.getRandom(MIN_VALUE, MAX_VALUE);
         int randomNumber2 = Random.getRandom(MIN_VALUE, MAX_VALUE);
 
-        int result = 0;
+        int result;
 
         System.out.println("Question :" + randomNumber1 + " " + randomNumber2);
 
