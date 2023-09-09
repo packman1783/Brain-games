@@ -3,15 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Random;
 
 public class Even {
-    static final int MIN_VALUE = 1;
-    static final int MAX_VALUE = 100;
+    static final int MIN_VALUE_EVEN = 1;
+    static final int MAX_VALUE_EVEN = 100;
 
     public static void gameRule() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
     public static String gameCorrectAnswer() {
-        int randomNumber = Random.getRandom(MIN_VALUE, MAX_VALUE);
+        int randomNumber = Random.getRandom(MIN_VALUE_EVEN, MAX_VALUE_EVEN);
 
         System.out.println("Question: " + randomNumber);
 

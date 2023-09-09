@@ -3,15 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Random;
 
 public class Prime {
-    static final int MIN_VALUE = 0;
-    static final int MAX_VALUE = 100;
+    static final int MIN_VALUE_PRIME = 0;
+    static final int MAX_VALUE_PRIME = 100;
 
     public static void gameRule() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     public static String gameCorrectAnswer() {
-        int randomNumber = Random.getRandom(MIN_VALUE, MAX_VALUE);
+        int randomNumber = Random.getRandom(MIN_VALUE_PRIME, MAX_VALUE_PRIME);
 
         System.out.println("Question: " + randomNumber);
 
@@ -28,6 +28,7 @@ public class Prime {
                 return false;
             }
         }
+
         return true;
     }
 }
