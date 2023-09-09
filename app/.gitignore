@@ -8,7 +8,7 @@ build/
 **/logs/
 
 # Ignore IntelliJ IDEA
-.idea/
+.idea
 *.iws
 *.iml
 *.ipr
