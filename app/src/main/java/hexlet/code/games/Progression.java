@@ -4,7 +4,8 @@ import hexlet.code.Random;
 
 import java.util.Arrays;
 
-public class Progression {
+public class Progression implements Game {
+    private static final String gameRule = "What number is missing in the progression?";
     final static int MIN_VALUE_PROGRESSION = 1;
     final static int MAX_VALUE_PROGRESSION = 100;
     final static int MIN_DIFF_PROGRESSION = 1;
@@ -13,33 +14,35 @@ public class Progression {
     final static int MAX_LENGTH_PROGRESSION = 10;
     final static int START_REPLACE_INDEX_PROGRESSION = 0;
 
-    public static void gameRule() {
-        System.out.println("What number is missing in the progression?");
+    @Override
+    public String getRule() {
+        return gameRule;
     }
 
-    public static String gameCorrectAnswer() {
-
+    @Override
+    public QuestionAnswer getQuestionAnswer() {
         int firstNumber = Random.getRandom(MIN_VALUE_PROGRESSION, MAX_VALUE_PROGRESSION);
-        int difference = Random.getRandom(MIN_DIFF_PROGRESSION, MAX_DIFF_PROGRESSION);
+        int step = Random.getRandom(MIN_DIFF_PROGRESSION, MAX_DIFF_PROGRESSION);
         int lengthProgression = Random.getRandom(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
-        int replaceIndex = Random.getRandom(START_REPLACE_INDEX_PROGRESSION, lengthProgression - 1);
-        int hiddenNumber;
+        int hiddenIndex = Random.getRandom(START_REPLACE_INDEX_PROGRESSION, lengthProgression - 1);
 
+        int[] progression = getProgression(firstNumber, step, lengthProgression);
+
+        String answer = Integer.toString(progression[hiddenIndex]);
+        String question = Arrays
+                .toString(progression)
+                .replace(answer, "..");
+
+        return new QuestionAnswer(question, answer);
+    }
+
+    private static int[] getProgression(int firstNumber, int step, int lengthProgression) {
         int[] progression = new int[lengthProgression];
-        progression[0] = firstNumber;
 
-        for (int i = 1; i < lengthProgression; i++) {
-            progression[i] = progression[i - 1] + difference;
+        for (int i = 0; i < lengthProgression; i++) {
+            progression[i] = firstNumber + step * i;
         }
 
-        hiddenNumber = progression[replaceIndex];
-
-        String progressionString = Arrays
-                .toString(progression)
-                .replace(Integer.toString(hiddenNumber), "..");
-
-        System.out.println("Question: " + progressionString);
-
-        return Integer.toString(hiddenNumber);
+        return progression;
     }
 }
