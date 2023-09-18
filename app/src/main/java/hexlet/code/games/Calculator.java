@@ -6,6 +6,7 @@ public class Calculator {
     static final int MIN_VALUE_CALC = 1;
     static final int MAX_VALUE_CALC = 40;
     static final String[] OPERATORS = new String[]{" + ", " - ", " * "};
+    static final int START_INDEX_OPERATORS = 0;
     static String questionExpression;
 
     public static void gameRule() {
@@ -23,8 +24,7 @@ public class Calculator {
     }
 
     public static int randomAction(int firstRandomNumber, int secondRandomNumber) {
-        int lengthOperators = OPERATORS.length;
-        String operator = OPERATORS[(int) (Math.random() * lengthOperators)];
+        String operator = OPERATORS[Random.getRandom(START_INDEX_OPERATORS, OPERATORS.length)];
 
         int actionResult = 0;
 
