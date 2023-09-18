@@ -38,29 +38,19 @@ public class App {
                 Cli.greetingUser();
                 break;
             case EVEN:
-                Cli.greetingUser();
-                Even.gameRule();
-                Engine.playGame(userChoice);
+                new Engine(new Even());
                 break;
             case CALC:
-                Cli.greetingUser();
-                Calculator.gameRule();
-                Engine.playGame(userChoice);
+                new Engine(new Calculator());
                 break;
             case GCD:
-                Cli.greetingUser();
-                Gcd.gameRule();
-                Engine.playGame(userChoice);
+                new Engine(new Gcd());
                 break;
             case PROGRESSION:
-                Cli.greetingUser();
-                Progression.gameRule();
-                Engine.playGame(userChoice);
+                new Engine(new Progression());
                 break;
             case PRIME:
-                Cli.greetingUser();
-                Prime.gameRule();
-                Engine.playGame(userChoice);
+                new Engine(new Prime());
                 break;
             case EXIT:
                 break;
@@ -68,5 +58,7 @@ public class App {
                 System.out.println("no such game: " + userChoice);
                 break;
         }
+
+        scanner.close();
     }
 }
