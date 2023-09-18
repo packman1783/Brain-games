@@ -2,23 +2,25 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-public class Even {
-    static final int MIN_VALUE_EVEN = 1;
-    static final int MAX_VALUE_EVEN = 100;
+public class Even implements Game {
+    private static final String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final int MIN_VALUE_EVEN = 1;
+    private static final int MAX_VALUE_EVEN = 100;
 
-    public static void gameRule() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+    @Override
+    public String getRule() {
+        return gameRule;
     }
 
-    public static String gameCorrectAnswer() {
+    @Override
+    public QuestionAnswer getQuestionAnswer() {
         int randomNumber = Random.getRandom(MIN_VALUE_EVEN, MAX_VALUE_EVEN);
+        String answer = isEven(randomNumber) ? "yes" : "no";
 
-        System.out.println("Question: " + randomNumber);
-
-        return isEven(randomNumber) ? "yes" : "no";
+        return new QuestionAnswer(Integer.toString(randomNumber), answer);
     }
 
     public static boolean isEven(int randomNumber) {
-        return randomNumber % 2 == 0;
+        return (randomNumber % 2) == 0;
     }
 }
