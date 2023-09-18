@@ -2,17 +2,23 @@ package hexlet.code;
 
 import hexlet.code.games.Even;
 import hexlet.code.games.Calculator;
-import hexlet.code.games.GCD;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
+import static hexlet.code.App.EVEN;
+import static hexlet.code.App.CALC;
+import static hexlet.code.App.GCD;
+import static hexlet.code.App.PROGRESSION;
+import static hexlet.code.App.PRIME;
+
 public class Engine {
     static final int NUMBER_OF_ROUND = 3;
     static final int NUMBER_WIN_ANSWER = 3;
 
-    public static void gamePlay(int userChoice) {
+    public static void playGame(int userChoice) {
         Scanner scanner = new Scanner(System.in);
 
         String correctAnswer = "";
@@ -21,19 +27,19 @@ public class Engine {
 
         for (int i = 0; i < NUMBER_OF_ROUND; i++) {
             switch (userChoice) {
-                case 2:
+                case EVEN:
                     correctAnswer = Even.gameCorrectAnswer();
                     break;
-                case 3:
+                case CALC:
                     correctAnswer = Calculator.gameCorrectAnswer();
                     break;
-                case 4:
-                    correctAnswer = GCD.gameCorrectAnswer();
+                case GCD:
+                    correctAnswer = Gcd.gameCorrectAnswer();
                     break;
-                case 5:
+                case PROGRESSION:
                     correctAnswer = Progression.gameCorrectAnswer();
                     break;
-                case 6:
+                case PRIME:
                     correctAnswer = Prime.gameCorrectAnswer();
                     break;
                 default:
@@ -51,14 +57,10 @@ public class Engine {
                 break;
             }
 
-            gameResult(Cli.userName, countWinAnswer);
+            if (countWinAnswer == NUMBER_WIN_ANSWER) {
+                System.out.println("Congratulations, " + Cli.userName + "!");
+            }
         }
         scanner.close();
-    }
-
-    public static void gameResult(String userName, int countWinAnswer) {
-        if (countWinAnswer == NUMBER_WIN_ANSWER) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
     }
 }

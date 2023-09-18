@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-public class GCD {
+public class Gcd {
     static final int MIN_VALUE_GCD = 1;
     static final int MAX_VALUE_GCD = 100;
 
@@ -16,15 +16,20 @@ public class GCD {
 
         System.out.println("Question :" + firstNumberGCD + " " + secondNumberGCD);
 
-        while (firstNumberGCD != secondNumberGCD) {
-            if (firstNumberGCD > secondNumberGCD) {
-                firstNumberGCD = firstNumberGCD - secondNumberGCD;
+        return isGcd(firstNumberGCD, secondNumberGCD);
+    }
+
+    public static String isGcd(int firstNumber, int secondNumber) {
+
+        while (firstNumber != secondNumber) {
+            if (firstNumber > secondNumber) {
+                firstNumber = firstNumber - secondNumber;
             }
-            if (secondNumberGCD > firstNumberGCD) {
-                secondNumberGCD = secondNumberGCD - firstNumberGCD;
+            if (secondNumber > firstNumber) {
+                secondNumber = secondNumber - firstNumber;
             }
         }
 
-        return Integer.toString(firstNumberGCD);
+        return Integer.toString(firstNumber);
     }
 }
