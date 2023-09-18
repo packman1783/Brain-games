@@ -24,11 +24,11 @@ public class Progression implements Game {
         int firstNumber = Random.getRandom(MIN_VALUE_PROGRESSION, MAX_VALUE_PROGRESSION);
         int step = Random.getRandom(MIN_DIFF_PROGRESSION, MAX_DIFF_PROGRESSION);
         int lengthProgression = Random.getRandom(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
-        int hiddenIndex = Random.getRandom(START_REPLACE_INDEX_PROGRESSION, lengthProgression - 1);
+        int hiddenIndex = Random.getRandom(START_REPLACE_INDEX_PROGRESSION, lengthProgression);
 
         int[] progression = getProgression(firstNumber, step, lengthProgression);
 
-        String answer = Integer.toString(progression[hiddenIndex]);
+        String answer = Integer.toString(progression[hiddenIndex - 1]);
         String question = Arrays
                 .toString(progression)
                 .replace(answer, "..");
