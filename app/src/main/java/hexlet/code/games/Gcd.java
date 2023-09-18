@@ -2,21 +2,24 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-public class Gcd {
+public class Gcd implements Game {
+    private static final String gameRule = "Find the greatest common divisor of given numbers.";
     static final int MIN_VALUE_GCD = 1;
     static final int MAX_VALUE_GCD = 100;
 
-    public static void gameRule() {
-        System.out.println("Find the greatest common divisor of given numbers.");
+    @Override
+    public String getRule() {
+        return gameRule;
     }
 
-    public static String gameCorrectAnswer() {
+    @Override
+    public QuestionAnswer getQuestionAnswer() {
         int firstNumberGCD = Random.getRandom(MIN_VALUE_GCD, MAX_VALUE_GCD);
         int secondNumberGCD = Random.getRandom(MIN_VALUE_GCD, MAX_VALUE_GCD);
+        String question = firstNumberGCD + " " + secondNumberGCD;
+        String answer = isGcd(firstNumberGCD, secondNumberGCD);
 
-        System.out.println("Question :" + firstNumberGCD + " " + secondNumberGCD);
-
-        return isGcd(firstNumberGCD, secondNumberGCD);
+        return new QuestionAnswer(question, answer);
     }
 
     public static String isGcd(int firstNumber, int secondNumber) {
