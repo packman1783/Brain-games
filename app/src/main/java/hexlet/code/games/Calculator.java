@@ -2,49 +2,47 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-public class Calculator {
+public class Calculator implements Game {
+    private static final String gameRule = "What is the result of the expression?";
     static final int MIN_VALUE_CALC = 1;
     static final int MAX_VALUE_CALC = 40;
     static final String[] OPERATORS = new String[]{" + ", " - ", " * "};
     static final int START_INDEX_OPERATORS = 0;
-    static String questionExpression;
 
-    public static void gameRule() {
-        System.out.println("What is the result of the expression?");
+    @Override
+    public String getRule() {
+        return gameRule;
     }
 
-    public static String gameCorrectAnswer() {
+    @Override
+    public QuestionAnswer getQuestionAnswer() {
         int firstNumberCalc = Random.getRandom(MIN_VALUE_CALC, MAX_VALUE_CALC);
         int secondNumberCalc = Random.getRandom(MIN_VALUE_CALC, MAX_VALUE_CALC);
+        String operator = OPERATORS[Random.getRandom(START_INDEX_OPERATORS, OPERATORS.length - 1)];
 
-        int result = randomAction(firstNumberCalc, secondNumberCalc);
-        System.out.println("Question :" + questionExpression);
+        String question = firstNumberCalc + operator + secondNumberCalc;
+        String answer = Integer.toString(randomAction(firstNumberCalc, secondNumberCalc, operator));
 
-        return Integer.toString(result);
+        return new QuestionAnswer(question, answer);
     }
 
-    public static int randomAction(int firstRandomNumber, int secondRandomNumber) {
-        String operator = OPERATORS[Random.getRandom(START_INDEX_OPERATORS, OPERATORS.length)];
-
-        int actionResult = 0;
+    public static int randomAction(int firstNumber, int secondNumber, String operator) {
+        int result = 0;
 
         switch (operator) {
             case " + ":
-                actionResult = firstRandomNumber + secondRandomNumber;
+                result = firstNumber + secondNumber;
                 break;
             case " - ":
-                actionResult = firstRandomNumber - secondRandomNumber;
+                result = firstNumber - secondNumber;
                 break;
             case " * ":
-                actionResult = firstRandomNumber * secondRandomNumber;
+                result = firstNumber * secondNumber;
                 break;
             default:
                 System.exit(0);
-                break;
         }
 
-        questionExpression = firstRandomNumber + operator + secondRandomNumber;
-
-        return actionResult;
+        return result;
     }
 }
