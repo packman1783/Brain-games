@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-import java.util.Arrays;
-
 public class Progression implements Game {
     private static final String gameRule = "What number is missing in the progression?";
     final static int MIN_VALUE_PROGRESSION = 1;
@@ -12,7 +10,7 @@ public class Progression implements Game {
     final static int MAX_DIFF_PROGRESSION = 10;
     final static int MIN_LENGTH_PROGRESSION = 5;
     final static int MAX_LENGTH_PROGRESSION = 10;
-    final static int START_REPLACE_INDEX_PROGRESSION = 0;
+    final static int START_REPLACE_INDEX_PROGRESSION = 1;
 
     @Override
     public String getRule() {
@@ -29,9 +27,7 @@ public class Progression implements Game {
         int[] progression = getProgression(firstNumber, step, lengthProgression);
 
         String answer = Integer.toString(progression[hiddenIndex - 1]);
-        String question = Arrays
-                .toString(progression)
-                .replace(answer, "..");
+        String question = getProgressionStr(progression, answer);
 
         return new QuestionAnswer(question, answer);
     }
@@ -44,5 +40,19 @@ public class Progression implements Game {
         }
 
         return progression;
+    }
+
+    private static String getProgressionStr(int[] progression, String hiddenNumber) {
+        StringBuilder progressionStr = new StringBuilder();
+        for (int number : progression) {
+            progressionStr
+                    .append(number)
+                    .append(" ");
+        }
+
+        return progressionStr
+                .toString()
+                .replace(hiddenNumber, "..")
+                .trim();
     }
 }
