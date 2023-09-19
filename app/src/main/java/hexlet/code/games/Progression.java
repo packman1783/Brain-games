@@ -3,18 +3,18 @@ package hexlet.code.games;
 import hexlet.code.Random;
 
 public class Progression implements Game {
-    private static final String gameRule = "What number is missing in the progression?";
-    final static int MIN_VALUE_PROGRESSION = 1;
-    final static int MAX_VALUE_PROGRESSION = 100;
-    final static int MIN_DIFF_PROGRESSION = 1;
-    final static int MAX_DIFF_PROGRESSION = 10;
-    final static int MIN_LENGTH_PROGRESSION = 5;
-    final static int MAX_LENGTH_PROGRESSION = 10;
-    final static int START_REPLACE_INDEX_PROGRESSION = 1;
+    private static final String GAME_RULE = "What number is missing in the progression?";
+    private static final int MIN_VALUE_PROGRESSION = 1;
+    private static final int MAX_VALUE_PROGRESSION = 100;
+    private static final int MIN_DIFF_PROGRESSION = 1;
+    private static final int MAX_DIFF_PROGRESSION = 10;
+    private static final int MIN_LENGTH_PROGRESSION = 5;
+    private static final int MAX_LENGTH_PROGRESSION = 10;
+    private static final int START_REPLACE_INDEX_PROGRESSION = 1;
 
     @Override
     public String getRule() {
-        return gameRule;
+        return GAME_RULE;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Progression implements Game {
         int[] progression = getProgression(firstNumber, step, lengthProgression);
 
         String answer = Integer.toString(progression[hiddenIndex - 1]);
-        String question = getProgressionStr(progression, answer);
+        String question = getProgressionString(progression, answer);
 
         return new QuestionAnswer(question, answer);
     }
@@ -42,7 +42,7 @@ public class Progression implements Game {
         return progression;
     }
 
-    private static String getProgressionStr(int[] progression, String hiddenNumber) {
+    private static String getProgressionString(int[] progression, String hiddenNumber) {
         StringBuilder progressionStr = new StringBuilder();
         for (int number : progression) {
             progressionStr

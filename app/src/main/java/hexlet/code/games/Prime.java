@@ -3,13 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Random;
 
 public class Prime implements Game {
-    private static final String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    static final int MIN_VALUE_PRIME = 0;
-    static final int MAX_VALUE_PRIME = 100;
+    private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final int MIN_VALUE_PRIME = 0;
+    private static final int MAX_VALUE_PRIME = 100;
 
     @Override
     public String getRule() {
-        return gameRule;
+        return GAME_RULE;
     }
 
     @Override

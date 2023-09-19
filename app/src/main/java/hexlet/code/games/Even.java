@@ -3,13 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Random;
 
 public class Even implements Game {
-    private static final String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int MIN_VALUE_EVEN = 1;
     private static final int MAX_VALUE_EVEN = 100;
 
     @Override
     public String getRule() {
-        return gameRule;
+        return GAME_RULE;
     }
 
     @Override

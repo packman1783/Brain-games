@@ -3,15 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Random;
 
 public class Calculator implements Game {
-    private static final String gameRule = "What is the result of the expression?";
-    static final int MIN_VALUE_CALC = 1;
-    static final int MAX_VALUE_CALC = 40;
-    static final String[] OPERATORS = new String[]{" + ", " - ", " * "};
-    static final int START_INDEX_OPERATORS = 0;
+    private static final String GAME_RULE = "What is the result of the expression?";
+    private static final int MIN_VALUE_CALC = 1;
+    private static final int MAX_VALUE_CALC = 40;
+    private static final String[] OPERATORS = new String[]{" + ", " - ", " * "};
+    private static final int START_INDEX_OPERATORS = 0;
 
     @Override
     public String getRule() {
-        return gameRule;
+        return GAME_RULE;
     }
 
     @Override
