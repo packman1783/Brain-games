@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-public class Calculator implements Game {
+public final class Calculator implements Game {
     private static final String GAME_RULE = "What is the result of the expression?";
     private static final int MIN_VALUE_CALC = 1;
     private static final int MAX_VALUE_CALC = 40;

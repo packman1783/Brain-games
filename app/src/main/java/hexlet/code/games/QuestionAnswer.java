@@ -1,8 +1,8 @@
 package hexlet.code.games;
 
 public class QuestionAnswer {
-    String question;
-    String answer;
+    private String question;
+    private String answer;
 
     public QuestionAnswer(String question, String answer) {
         this.question = question;

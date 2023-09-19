@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-public class Even implements Game {
+public final class Even implements Game {
     private static final String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int MIN_VALUE_EVEN = 1;
     private static final int MAX_VALUE_EVEN = 100;

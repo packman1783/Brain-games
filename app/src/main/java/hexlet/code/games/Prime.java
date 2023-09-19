@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Random;
 
-public class Prime implements Game {
+public final class Prime implements Game {
     private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int MIN_VALUE_PRIME = 0;
     private static final int MAX_VALUE_PRIME = 100;
