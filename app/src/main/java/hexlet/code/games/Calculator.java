@@ -40,6 +40,7 @@ public final class Calculator implements Game {
                 result = firstNumber * secondNumber;
                 break;
             default:
+                System.out.println("No such operator");
                 System.exit(0);
         }
 
