@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Game;
+import hexlet.code.GameData;
 import hexlet.code.Random;
 
 public final class Progression implements Game {
@@ -43,16 +45,12 @@ public final class Progression implements Game {
     }
 
     private static String getProgressionString(int[] progression, String hiddenNumber) {
-        StringBuilder progressionStr = new StringBuilder();
-        for (int number : progression) {
-            progressionStr
-                    .append(number)
-                    .append(" ");
+        String[] progressionStr = new String[progression.length];
+        for (int i = 0; i < progression.length; i++) {
+            progressionStr[i] = Integer.toString(progression[i]);
         }
 
-        return progressionStr
-                .toString()
-                .replace(hiddenNumber, "..")
-                .trim();
+        String joinProgression = String.join(" ", progressionStr);
+        return joinProgression.replace(hiddenNumber, "..");
     }
 }
