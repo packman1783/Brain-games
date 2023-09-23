@@ -1,4 +1,4 @@
-package hexlet.code.games;
+package hexlet.code;
 
 public final class GameData {
     private final String question;

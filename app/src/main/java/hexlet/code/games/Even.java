@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Game;
+import hexlet.code.GameData;
 import hexlet.code.Random;
 
 public final class Even implements Game {
