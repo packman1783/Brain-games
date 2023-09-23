@@ -29,7 +29,7 @@ public final class Calculator implements Game {
     }
 
     public static int randomAction(int firstNumber, int secondNumber, String operator) {
-        int result;
+        int result = 0;
 
         switch (operator) {
             case " + ":
