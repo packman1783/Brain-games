@@ -15,7 +15,7 @@ public final class Calculator implements Game {
     }
 
     @Override
-    public QuestionAnswer getQuestionAnswer() {
+    public GameData getQuestionAnswer() {
         int firstNumberCalc = Random.getRandom(MIN_VALUE_CALC, MAX_VALUE_CALC);
         int secondNumberCalc = Random.getRandom(MIN_VALUE_CALC, MAX_VALUE_CALC);
         String operator = OPERATORS[Random.getRandom(START_INDEX_OPERATORS, OPERATORS.length - 1)];
@@ -23,7 +23,7 @@ public final class Calculator implements Game {
         String question = firstNumberCalc + operator + secondNumberCalc;
         String answer = Integer.toString(randomAction(firstNumberCalc, secondNumberCalc, operator));
 
-        return new QuestionAnswer(question, answer);
+        return new GameData(question, answer);
     }
 
     public static int randomAction(int firstNumber, int secondNumber, String operator) {

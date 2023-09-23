@@ -18,7 +18,7 @@ public final class Progression implements Game {
     }
 
     @Override
-    public QuestionAnswer getQuestionAnswer() {
+    public GameData getQuestionAnswer() {
         int firstNumber = Random.getRandom(MIN_VALUE_PROGRESSION, MAX_VALUE_PROGRESSION);
         int step = Random.getRandom(MIN_DIFF_PROGRESSION, MAX_DIFF_PROGRESSION);
         int lengthProgression = Random.getRandom(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
@@ -29,7 +29,7 @@ public final class Progression implements Game {
         String answer = Integer.toString(progression[hiddenIndex - 1]);
         String question = getProgressionString(progression, answer);
 
-        return new QuestionAnswer(question, answer);
+        return new GameData(question, answer);
     }
 
     private static int[] getProgression(int firstNumber, int step, int lengthProgression) {

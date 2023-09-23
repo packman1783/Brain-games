@@ -13,13 +13,13 @@ public final class Gcd implements Game {
     }
 
     @Override
-    public QuestionAnswer getQuestionAnswer() {
+    public GameData getQuestionAnswer() {
         int firstNumberGCD = Random.getRandom(MIN_VALUE_GCD, MAX_VALUE_GCD);
         int secondNumberGCD = Random.getRandom(MIN_VALUE_GCD, MAX_VALUE_GCD);
         String question = firstNumberGCD + " " + secondNumberGCD;
         String answer = isGcd(firstNumberGCD, secondNumberGCD);
 
-        return new QuestionAnswer(question, answer);
+        return new GameData(question, answer);
     }
 
     public static String isGcd(int firstNumber, int secondNumber) {

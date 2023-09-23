@@ -13,11 +13,11 @@ public final class Prime implements Game {
     }
 
     @Override
-    public QuestionAnswer getQuestionAnswer() {
+    public GameData getQuestionAnswer() {
         int randomNumber = Random.getRandom(MIN_VALUE_PRIME, MAX_VALUE_PRIME);
         String answer = isPrime(randomNumber) ? "yes" : "no";
 
-        return new QuestionAnswer(Integer.toString(randomNumber), answer);
+        return new GameData(Integer.toString(randomNumber), answer);
     }
 
     public static boolean isPrime(int randomNumber) {
