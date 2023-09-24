@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Game;
+import hexlet.code.GameData;
 import hexlet.code.Random;
 
 public final class Calculator implements Game {
@@ -40,7 +42,7 @@ public final class Calculator implements Game {
                 result = firstNumber * secondNumber;
                 break;
             default:
-                System.exit(0);
+                throw new IllegalArgumentException("No such operator: " + operator);
         }
 
         return result;

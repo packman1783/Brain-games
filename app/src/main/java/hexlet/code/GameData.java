@@ -1,10 +1,10 @@
-package hexlet.code.games;
+package hexlet.code;
 
-public final class QuestionAnswer {
+public final class GameData {
     private final String question;
     private final String answer;
 
-    public QuestionAnswer(String someQuestion, String someAnswer) {
+    public GameData(String someQuestion, String someAnswer) {
         this.question = someQuestion;
         this.answer = someAnswer;
     }
