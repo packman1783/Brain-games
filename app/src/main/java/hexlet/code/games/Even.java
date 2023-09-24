@@ -13,11 +13,11 @@ public final class Even implements Game {
     }
 
     @Override
-    public QuestionAnswer getQuestionAnswer() {
+    public GameData getQuestionAnswer() {
         int randomNumber = Random.getRandom(MIN_VALUE_EVEN, MAX_VALUE_EVEN);
         String answer = isEven(randomNumber) ? "yes" : "no";
 
-        return new QuestionAnswer(Integer.toString(randomNumber), answer);
+        return new GameData(Integer.toString(randomNumber), answer);
     }
 
     public static boolean isEven(int randomNumber) {

@@ -1,7 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.Game;
-import hexlet.code.games.QuestionAnswer;
+import hexlet.code.games.GameData;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class Engine {
         System.out.println(game.getRule());
 
         for (int i = 0; i < NUMBER_OF_ROUND; i++) {
-            QuestionAnswer quiz = game.getQuestionAnswer();
+            GameData quiz = game.getQuestionAnswer();
             String question = quiz.getQuestion();
             String answer = quiz.getAnswer();
 
