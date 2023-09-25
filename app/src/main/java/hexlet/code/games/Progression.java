@@ -50,7 +50,8 @@ public final class Progression implements Game {
             progressionStr[i] = Integer.toString(progression[i]);
         }
 
-        String joinProgression = String.join(" ", progressionStr);
-        return joinProgression.replace(hiddenNumber, "..");
+        return String
+                .join(" ", progressionStr)
+                .replace(hiddenNumber, "..");
     }
 }
