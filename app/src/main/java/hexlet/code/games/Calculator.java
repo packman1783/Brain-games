@@ -42,7 +42,7 @@ public final class Calculator implements Game {
                 result = firstNumber * secondNumber;
                 break;
             default:
-                System.out.println("No such operator, exit program");
+                System.out.println("No such operator: " + operator + ", exit program");
                 System.exit(0);
         }
 
