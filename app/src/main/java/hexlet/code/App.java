@@ -38,19 +38,19 @@ public class App {
                 Cli.greetingUser();
                 break;
             case EVEN:
-                new Engine(new Even());
+                Engine.startGame(new Even());
                 break;
             case CALC:
-                new Engine(new Calculator());
+                Engine.startGame(new Calculator());
                 break;
             case GCD:
-                new Engine(new Gcd());
+                Engine.startGame(new Gcd());
                 break;
             case PROGRESSION:
-                new Engine(new Progression());
+                Engine.startGame(new Progression());
                 break;
             case PRIME:
-                new Engine(new Prime());
+                Engine.startGame(new Prime());
                 break;
             case EXIT:
                 break;

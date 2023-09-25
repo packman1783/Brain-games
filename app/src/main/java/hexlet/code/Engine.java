@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
     private static final int NUMBER_OF_ROUND = 3;
 
-    public Engine(Game game) {
+    public static void startGame(Game game) {
         int countWinAnswer = 0;
 
         Scanner scanner = new Scanner(System.in);
