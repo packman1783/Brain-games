@@ -1,15 +1,14 @@
-## Description:
-Simple logic games:
-1. Even or od number 
-2. Calculator
-3. Greatest common divisor for two numbers
-4. Missing number in the arithmetic sequence
-5. Yes if number is prime
-
 ### Hexlet tests and linter status:
 [![hexlet-check](https://github.com/packman1783/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/packman1783/java-project-61/actions/workflows/hexlet-check.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ad08bb86331954798e2/maintainability)](https://codeclimate.com/github/packman1783/java-project-61/maintainability)  
 
+## Description:
+Simple logic games:
+1. Even or od number
+2. Calculator
+3. Greatest common divisor for two numbers
+4. Missing number in the arithmetic sequence
+5. Yes if number is prime
 
 ### Use:
 ```
