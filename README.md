@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ad08bb86331954798e2/maintainability)](https://codeclimate.com/github/packman1783/java-project-61/maintainability)  
 
 ## Description:
-Simple logic games:
+Simple logic games is a set of five console games for brain training:
 1. Even or od number
 2. Calculator
 3. Greatest common divisor for two numbers
@@ -11,6 +11,10 @@ Simple logic games:
 5. Yes if number is prime
 
 ### Use:
+Each game asks questions that must be answered correctly. After three correct answers, the game is considered completed. 
+Wrong answers end the game and prompt you to play it again.
+
+ for example:
 ```
 $ make run-dist
 ```
