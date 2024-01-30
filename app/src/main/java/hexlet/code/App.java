@@ -34,29 +34,15 @@ public class App {
         System.out.println("Your choice: " + userChoice);
 
         switch (userChoice) {
-            case GREET:
-                Cli.greetingUser();
-                break;
-            case EVEN:
-                Engine.startGame(new Even());
-                break;
-            case CALC:
-                Engine.startGame(new Calculator());
-                break;
-            case GCD:
-                Engine.startGame(new Gcd());
-                break;
-            case PROGRESSION:
-                Engine.startGame(new Progression());
-                break;
-            case PRIME:
-                Engine.startGame(new Prime());
-                break;
-            case EXIT:
-                break;
-            default:
-                System.out.println("no such game: " + userChoice);
-                break;
+            case GREET -> Cli.greetingUser();
+            case EVEN -> Engine.startGame(new Even());
+            case CALC -> Engine.startGame(new Calculator());
+            case GCD -> Engine.startGame(new Gcd());
+            case PROGRESSION -> Engine.startGame(new Progression());
+            case PRIME -> Engine.startGame(new Prime());
+            case EXIT -> {
+            }
+            default -> System.out.println("no such game: " + userChoice);
         }
 
         scanner.close();
