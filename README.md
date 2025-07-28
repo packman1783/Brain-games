@@ -1,4 +1,4 @@
-### Hexlet tests and linter status:
+### Hexlet tests:
 [![hexlet-check](https://github.com/packman1783/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/packman1783/java-project-61/actions/workflows/hexlet-check.yml)
 
 
