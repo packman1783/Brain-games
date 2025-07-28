@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![hexlet-check](https://github.com/packman1783/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/packman1783/java-project-61/actions/workflows/hexlet-check.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9ad08bb86331954798e2/maintainability)](https://codeclimate.com/github/packman1783/java-project-61/maintainability)  
+
 
 ## Description:
 Simple logic games is a set of five console games for brain training:
